@@ -1,0 +1,80 @@
+//---------------------------------------------------------------------------
+// Copyright (c) 2016 Embarcadero Technologies, Inc. All rights reserved.  
+//
+// This software is the copyrighted property of Embarcadero Technologies, Inc. 
+// ("Embarcadero") and its licensors. You may only use this software if you 
+// are an authorized licensee of Delphi, C++Builder or RAD Studio 
+// (the "Embarcadero Products").  This software is subject to Embarcadero's 
+// standard software license and support agreement that accompanied your 
+// purchase of the Embarcadero Products and is considered a Redistributable, 
+// as such term is defined thereunder. Your use of this software constitutes 
+// your acknowledgement of your agreement to the foregoing software license 
+// and support agreement. 
+//---------------------------------------------------------------------------
+unit NotificationServiceUnit;
+
+interface
+
+uses
+  System.SysUtils,
+  System.Classes,
+  System.Android.Service,
+  AndroidApi.JNI.GraphicsContentViewText,
+  Androidapi.JNI.Os, System.Notification, IdBaseComponent, IdComponent,
+  IdCustomTCPServer, IdCustomHTTPServer, IdHTTPServer, IdContext;
+
+type
+  TNotificationServiceDM = class(TAndroidService)
+    IdHTTPServer1: TIdHTTPServer;
+    function AndroidServiceStartCommand(const Sender: TObject; const Intent: JIntent; Flags, StartId: Integer): Integer;
+    procedure IdHTTPServer1CommandGet(AContext: TIdContext;
+      ARequestInfo: TIdHTTPRequestInfo; AResponseInfo: TIdHTTPResponseInfo);
+  private
+    { Private declarations }
+    FThread: TThread;
+  public
+    { Public declarations }
+  end;
+
+var
+  NotificationServiceDM: TNotificationServiceDM;
+
+implementation
+
+{%CLASSGROUP 'FMX.Controls.TControl'}
+
+uses
+  Androidapi.JNI.App, System.DateUtils;
+
+{$R *.dfm}
+
+function TNotificationServiceDM.AndroidServiceStartCommand(const Sender: TObject; const Intent: JIntent; Flags,
+  StartId: Integer): Integer;
+begin
+//  JavaService.stopSelf;
+  Result := TJService.JavaClass.START_STICKY;
+end;
+
+procedure TNotificationServiceDM.IdHTTPServer1CommandGet(AContext: TIdContext;
+  ARequestInfo: TIdHTTPRequestInfo; AResponseInfo: TIdHTTPResponseInfo);
+var
+  i:integer;
+begin
+    AResponseInfo.ContentType := 'text/html';
+    AResponseInfo.ContentEncoding := 'UTF-8';
+    AResponseInfo.CharSet := 'UTF-8';
+     if(ARequestInfo.URI='/ololo') then
+     begin
+          AResponseInfo.ContentText:='return1';
+     end
+     else
+     begin
+       AResponseInfo.ContentText:='return2';
+     end;
+     For i:=0 to ARequestInfo.Params.Count-1 do
+        begin
+            AResponseInfo.ContentText:=AResponseInfo.ContentText + ' ' + i.ToString + '=' + ARequestInfo.Params[i];
+        end;
+end;
+
+end.

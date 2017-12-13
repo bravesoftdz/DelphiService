@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <ActiveMobileDevice>   <NoProfile iOSSimulator="iPhone5" Android="P6LDU17113004444"/>
+  </ActiveMobileDevice>
+  <Transactions>
+    <Transaction>2017.12.13 19:55:16.692,C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas=</Transaction>
+    <Transaction>2017.12.13 19:55:47.097,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas</Transaction>
+    <Transaction>2017.12.13 19:55:47.104,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\Android\Debug\NotificationService.jar</Transaction>
+  </Transactions>
+</BorlandProject>
