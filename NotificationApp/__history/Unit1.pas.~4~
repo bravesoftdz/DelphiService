@@ -42,7 +42,7 @@ uses
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   TLocalServiceConnection.StartService('NotificationService');
-  Application.Terminate;
+  SharedActivity.finish;
 end;
 
 end.

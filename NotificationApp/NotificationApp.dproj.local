@@ -1,10 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <ActiveMobileDevice>   <NoProfile iOSSimulator="iPhone5" Android="P6LDU17113004444"/>
-  </ActiveMobileDevice>
-  <Transactions>
-    <Transaction>2017.12.13 19:55:16.692,C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas=</Transaction>
-    <Transaction>2017.12.13 19:55:47.097,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas</Transaction>
-    <Transaction>2017.12.13 19:55:47.104,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\Android\Debug\NotificationService.jar</Transaction>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5" Android="ZY3225SH9J"/>
+	</ActiveMobileDevice>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.692,C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.097,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.104,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\Android\Debug\NotificationService.jar</Transaction>
+    <Transaction>2017.12.15 14:37:03.505,C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\Android\Debug\NotificationService.jar=</Transaction>
+    <Transaction>2017.12.15 14:37:03.513,C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas=</Transaction>
+    <Transaction>2017.12.15 14:40:59.998,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas</Transaction>
+    <Transaction>2017.12.15 14:41:00.008,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\Android\Debug\NotificationService.jar</Transaction>
+    <Transaction>2017.12.15 14:52:46.158,C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas=</Transaction>
+    <Transaction>2017.12.15 14:57:03.556,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas</Transaction>
+    <Transaction>2017.12.15 14:57:03.564,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\Android\Debug\NotificationService.jar</Transaction>
+    <Transaction>2017.12.15 14:58:33.712,C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\Android\Debug\NotificationService.jar=</Transaction>
+    <Transaction>2017.12.15 14:58:33.717,C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas=</Transaction>
+    <Transaction>2017.12.15 14:59:32.085,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas</Transaction>
+    <Transaction>2017.12.15 14:59:32.091,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\Android\Debug\NotificationService.jar</Transaction>
+    <Transaction>2017.12.15 15:02:04.993,C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\Android\Debug\NotificationService.jar=</Transaction>
+    <Transaction>2017.12.15 15:02:04.998,C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas=</Transaction>
+    <Transaction>2017.12.15 15:10:26.477,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\NotificationServiceUnit.pas</Transaction>
+    <Transaction>2017.12.15 15:10:26.483,=C:\Users\mamba\Desktop\AndroidNotificationServiceDemo\NotificationService\Android\Debug\NotificationService.jar</Transaction>
   </Transactions>
 </BorlandProject>

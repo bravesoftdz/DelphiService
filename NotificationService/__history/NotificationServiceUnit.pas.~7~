@@ -62,30 +62,20 @@ procedure TNotificationServiceDM.IdHTTPServer1CommandGet(AContext: TIdContext;
 var
   i:integer;
   Query: String;
-  HttpResponse: String;
-  Response: String;
 begin
   IdHTTP1 := TIdHTTP.Create;
   AResponseInfo.ContentType := 'text/html';
   AResponseInfo.ContentEncoding := 'UTF-8';
   AResponseInfo.CharSet := 'UTF-8';
-  if(ARequestInfo.URI='/1') then
+  if(ARequestInfo.URI='/123') then
   begin
     Query:='http://10.31.0.40:5000';
-    HttpResponse := IdHTTP1.Get(Query);
-    Response := HttpResponse + Query;
-    AResponseInfo.ContentText := Response;
-  end;
-  if(ARequestInfo.URI = '/2') then
-  begin
-    Query := 'http://10.31.0.40:5000/json/TestConnection';
-    HttpResponse := IdHTTP1.Get(Query);
-    Response := HttpResponse + Query;
-    AResponseInfo.ContentText := Response;
+//    IdHTTP1.Get(Query);
+    AResponseInfo.ContentText := IdHTTP1.Get(Query);
   end
   else
   begin
-    AResponseInfo.ContentText:='default';
+    AResponseInfo.ContentText:='return2';
   end;
   For i:=0 to ARequestInfo.Params.Count-1 do
     begin
