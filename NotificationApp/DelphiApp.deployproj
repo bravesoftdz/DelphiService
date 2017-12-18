@@ -15,7 +15,7 @@
     <ItemGroup Condition="'$(Platform)'=='Win32'"/>
     <ItemGroup Condition="'$(Platform)'=='OSX32'">
         <DeployFile Include="$(BDS)\Redist\osx32\libcgsqlite3.dylib">
-            <RemoteDir>NotificationApp.app\Contents\MacOS\</RemoteDir>
+            <RemoteDir>DelphiApp.app\Contents\MacOS\</RemoteDir>
             <RemoteName>libcgsqlite3.dylib</RemoteName>
             <DeployClass>DependencyModule</DeployClass>
             <Operation>1</Operation>
@@ -24,7 +24,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib">
-            <RemoteDir>NotificationApp.app\Contents\MacOS\</RemoteDir>
+            <RemoteDir>DelphiApp.app\Contents\MacOS\</RemoteDir>
             <RemoteName>libcgunwind.1.0.dylib</RemoteName>
             <DeployClass>DependencyModule</DeployClass>
             <Operation>1</Operation>
@@ -35,7 +35,7 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Android'">
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\drawable-ldpi\</RemoteDir>
+            <RemoteDir>DelphiApp\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
             <Operation>1</Operation>
@@ -43,8 +43,17 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="..\NotificationService\Android\Release\libDelphiService.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>DelphiApp\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libDelphiService.so</RemoteName>
+            <DeployClass>AndroidServiceOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>DelphiApp\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
             <Operation>1</Operation>
@@ -53,7 +62,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\drawable-large\</RemoteDir>
+            <RemoteDir>DelphiApp\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
@@ -62,7 +71,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\drawable-xlarge\</RemoteDir>
+            <RemoteDir>DelphiApp\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
             <Operation>1</Operation>
@@ -71,7 +80,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\libProxyAndroidService.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>NotificationApp\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteDir>DelphiApp\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>libProxyAndroidService.so</RemoteName>
             <DeployClass>AndroidServiceOutput</DeployClass>
             <Operation>1</Operation>
@@ -80,7 +89,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\drawable-small\</RemoteDir>
+            <RemoteDir>DelphiApp\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
             <Operation>1</Operation>
@@ -89,7 +98,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>DelphiApp\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
@@ -98,7 +107,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\libProxyAndroidService.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteDir>DelphiApp\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>libProxyAndroidService.so</RemoteName>
             <DeployClass>AndroidServiceOutput</DeployClass>
             <Operation>1</Operation>
@@ -107,7 +116,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\library\lib\mips\</RemoteDir>
+            <RemoteDir>DelphiApp\library\lib\mips\</RemoteDir>
             <RemoteName>libNotificationApp.so</RemoteName>
             <DeployClass>AndroidLibnativeMipsFile</DeployClass>
             <Operation>1</Operation>
@@ -116,7 +125,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(NDKBasePath)\prebuilt\android-arm\gdbserver\gdbserver" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteDir>DelphiApp\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>gdbserver</RemoteName>
             <DeployClass>AndroidGDBServer</DeployClass>
             <Operation>1</Operation>
@@ -125,7 +134,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\classes.dex" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\classes\</RemoteDir>
+            <RemoteDir>DelphiApp\classes\</RemoteDir>
             <RemoteName>classes.dex</RemoteName>
             <DeployClass>AndroidClassesDexFile</DeployClass>
             <Operation>1</Operation>
@@ -134,7 +143,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\splash_image_def.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\drawable\</RemoteDir>
+            <RemoteDir>DelphiApp\res\drawable\</RemoteDir>
             <RemoteName>splash_image_def.xml</RemoteName>
             <DeployClass>AndroidSplashImageDef</DeployClass>
             <Operation>1</Operation>
@@ -143,7 +152,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\styles.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\values\</RemoteDir>
+            <RemoteDir>DelphiApp\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
             <Operation>1</Operation>
@@ -151,9 +160,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android\Debug\libNotificationApp.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libNotificationApp.so</RemoteName>
+        <DeployFile Include="Android\Debug\libDelphiApp.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>DelphiApp\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libDelphiApp.so</RemoteName>
             <DeployClass>ProjectOutput</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
@@ -161,17 +170,8 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="..\NotificationService\Android\Release\libNotificationService.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>NotificationApp\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libNotificationService.so</RemoteName>
-            <DeployClass>AndroidServiceOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="Android\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\</RemoteDir>
+            <RemoteDir>DelphiApp\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
             <Operation>1</Operation>
@@ -180,7 +180,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\library\lib\armeabi\</RemoteDir>
+            <RemoteDir>DelphiApp\library\lib\armeabi\</RemoteDir>
             <RemoteName>libNotificationApp.so</RemoteName>
             <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
             <Operation>1</Operation>
@@ -189,7 +189,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>DelphiApp\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
@@ -198,7 +198,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\drawable-normal\</RemoteDir>
+            <RemoteDir>DelphiApp\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
             <Operation>1</Operation>
@@ -206,8 +206,17 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="..\NotificationService\Android\Debug\libDelphiService.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>DelphiApp\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libDelphiService.so</RemoteName>
+            <DeployClass>AndroidServiceOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>DelphiApp\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
             <Operation>1</Operation>
@@ -215,17 +224,8 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="..\NotificationService\Android\Debug\libNotificationService.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libNotificationService.so</RemoteName>
-            <DeployClass>AndroidServiceOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\x86\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationApp\</RemoteDir>
+            <RemoteDir>DelphiApp\</RemoteDir>
             <RemoteName>libNotificationApp.so</RemoteName>
             <DeployClass>AndroidLibnativeX86File</DeployClass>
             <Operation>0</Operation>
@@ -236,7 +236,7 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='iOSSimulator'">
         <DeployFile Include="$(BDS)\Redist\iossimulator\libPCRE.dylib">
-            <RemoteDir>NotificationApp.app\</RemoteDir>
+            <RemoteDir>DelphiApp.app\</RemoteDir>
             <RemoteName>libPCRE.dylib</RemoteName>
             <DeployClass>DependencyModule</DeployClass>
             <Operation>1</Operation>
@@ -245,7 +245,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib">
-            <RemoteDir>NotificationApp.app\</RemoteDir>
+            <RemoteDir>DelphiApp.app\</RemoteDir>
             <RemoteName>libcgunwind.1.0.dylib</RemoteName>
             <DeployClass>DependencyModule</DeployClass>
             <Operation>1</Operation>

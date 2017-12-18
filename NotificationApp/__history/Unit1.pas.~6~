@@ -41,7 +41,7 @@ uses
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  TLocalServiceConnection.StartService('DelphiService');
+  TLocalServiceConnection.StartService('NotificationService');
   Application.Terminate;
 end;
 

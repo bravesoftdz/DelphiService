@@ -1,16 +1,3 @@
-//---------------------------------------------------------------------------
-// Copyright (c) 2016 Embarcadero Technologies, Inc. All rights reserved.  
-//
-// This software is the copyrighted property of Embarcadero Technologies, Inc. 
-// ("Embarcadero") and its licensors. You may only use this software if you 
-// are an authorized licensee of Delphi, C++Builder or RAD Studio 
-// (the "Embarcadero Products").  This software is subject to Embarcadero's 
-// standard software license and support agreement that accompanied your 
-// purchase of the Embarcadero Products and is considered a Redistributable, 
-// as such term is defined thereunder. Your use of this software constitutes 
-// your acknowledgement of your agreement to the foregoing software license 
-// and support agreement. 
-//---------------------------------------------------------------------------
 unit NotificationServiceUnit;
 
 interface
@@ -53,7 +40,6 @@ uses
 function TNotificationServiceDM.AndroidServiceStartCommand(const Sender: TObject; const Intent: JIntent; Flags,
   StartId: Integer): Integer;
 begin
-//  JavaService.stopSelf;
   Result := TJService.JavaClass.START_STICKY;
 end;
 
@@ -61,17 +47,34 @@ procedure TNotificationServiceDM.IdHTTPServer1CommandGet(AContext: TIdContext;
   ARequestInfo: TIdHTTPRequestInfo; AResponseInfo: TIdHTTPResponseInfo);
 var
   i:integer;
+  Query: String;
+  HttpResponse: String;
+  Response: String;
 begin
+  IdHTTP1 := TIdHTTP.Create;
   AResponseInfo.ContentType := 'text/html';
   AResponseInfo.ContentEncoding := 'UTF-8';
   AResponseInfo.CharSet := 'UTF-8';
-  if(ARequestInfo.URI='/123') then
+  if(ARequestInfo.URI='/registerSlipReceipt') then
   begin
-    AResponseInfo.ContentText:='return1';
+    Query:='localhost:8080/printSlipReceipt';
+    HttpResponse := IdHTTP1.Get(Query);
+    Response := HttpResponse + Query;
+    AResponseInfo.ContentText := Response;
+  end;
+  if(ARequestInfo.URI = '/registerReceipt') then
+  begin
+    Query := 'localhost:8080/printReceipt';
+    HttpResponse := IdHTTP1.Get(Query);
+    Response := HttpResponse + Query;
+    AResponseInfo.ContentText := Response;
   end
   else
   begin
-    AResponseInfo.ContentText:='return2';
+    Query := 'localhost:8080';
+    HttpResponse := IdHTTP1.Get(Query);
+    Response := HttpResponse + Query;
+    AResponseInfo.ContentText:=Response;
   end;
   For i:=0 to ARequestInfo.Params.Count-1 do
     begin

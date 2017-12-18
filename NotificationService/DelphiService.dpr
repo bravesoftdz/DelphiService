@@ -11,38 +11,16 @@
 // your acknowledgement of your agreement to the foregoing software license 
 // and support agreement. 
 //---------------------------------------------------------------------------
-unit Unit1;
-
-interface
+program DelphiService;
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Controls.Presentation, FMX.StdCtrls,
-  System.Notification, FMX.ScrollBox, FMX.Memo, FMX.Platform.Android, FMX.Helpers.Android, Androidapi.Helpers;
+  System.Android.ServiceApplication,
+  NotificationServiceUnit in 'NotificationServiceUnit.pas' {NotificationServiceDM: TAndroidService};
 
-type
-  TForm1 = class(TForm)
-    procedure FormCreate(Sender: TObject);
-  private
-    { Private declarations }
-  public
-    { Public declarations }
-  end;
+{$R *.res}
 
-var
-  Form1: TForm1;
-
-implementation
-
-{$R *.fmx}
-
-uses
-  System.Android.Service;
-
-procedure TForm1.FormCreate(Sender: TObject);
 begin
-  TLocalServiceConnection.StartService('DelphiService');
-  Application.Terminate;
-end;
-
+  Application.Initialize;
+  Application.CreateForm(TNotificationServiceDM, NotificationServiceDM);
+  Application.Run;
 end.

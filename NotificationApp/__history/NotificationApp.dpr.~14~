@@ -16,8 +16,7 @@ program NotificationApp;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  Unit1 in 'Unit1.pas' {Form1},
-  NotificationServiceUnit in '..\NotificationService\NotificationServiceUnit.pas' {NotificationServiceDM: TAndroidService};
+  Unit1 in 'Unit1.pas' {Form1};
 
 {$R *.res}
 
